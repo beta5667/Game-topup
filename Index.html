@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TONG PLUS - ร้านเติมเกม</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #f0f2f5;
+      color: #1c1e21;
+      padding-bottom: 48px;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .profile-card {
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+      overflow: hidden;
+    }
+
+    .banner {
+      height: 190px;
+      background: linear-gradient(135deg, #1e1b4b 0%, #4f46e5 55%, #06b6d4 100%);
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 14px;
+    }
+
+    .status-badge {
+      background: rgba(16, 185, 129, 0.95);
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 999px;
+    }
+
+    .profile-info {
+      padding: 0 20px 24px;
+      position: relative;
+    }
+
+    .avatar {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f59e0b, #ef4444);
+      border: 4px solid #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-top: -56px;
+      margin-bottom: 12px;
+    }
+
+    .shop-name {
+      font-size: 24px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .shop-bio {
+      margin-top: 6px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #4b5563;
+    }
+
+    .contact-box {
+      margin-top: 12px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #374151;
+    }
+
+    .action-row {
+      margin-top: 16px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: #2563eb;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 10px 16px;
+      border-radius: 10px;
+    }
+
+    .btn-line {
+      display: inline-block;
+      background: #06c755;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 10px 14px;
+      border-radius: 10px;
+    }
+
+    .btn-ig {
+      display: inline-block;
+      background: linear-gradient(45deg, #f59e0b, #ec4899, #8b5cf6);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 10px 14px;
+      border-radius: 10px;
+    }
+
+    .btn-fb {
+      display: inline-block;
+      background: #1877f2;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 10px 14px;
+      border-radius: 10px;
+    }
+
+    .section {
+      margin-top: 18px;
+      padding: 0 14px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 12px;
+      padding-left: 4px;
+    }
+
+    .game-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .game-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .game-icon {
+      font-size: 26px;
+    }
+
+    .game-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .pack-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .pack-item {
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #fafafa;
+    }
+
+    .pack-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1f2937;
+    }
+
+    .pack-price {
+      margin-top: 4px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #2563eb;
+    }
+
+    .buy-btn {
+      margin-top: 10px;
+      display: block;
+      text-align: center;
+      background: #10b981;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 10px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="profile-card">
+      <div class="banner">
+        <span class="status-badge">● เปิดรับเติมตลอด</span>
+      </div>
+
+      <div class="profile-info">
+        <div class="avatar">TP</div>
+        <h1 class="shop-name">TONG PLUS</h1>
+        <p class="shop-bio">
+          รับเติมเกมราคาคุ้ม เติมไว ปลอดภัย เลือกแพ็กเกจแล้วทักแชตสั่งซื้อได้ทันที
+        </p>
+
+        <div class="contact-box">
+          <div><b>Line:</b> tong1111111111</div>
+          <div><b>IG:</b> tongplus.shop</div>
+          <div><b>Facebook:</b> Nattasaran อ่อ</div>
+        </div>
+
+        <div class="action-row">
+          <a href="#packages" class="btn-primary">ดูแพ็กเกจ</a>
+          <a href="https://line.me/R/ti/p/~tong1111111111" target="_blank" class="btn-line">Line</a>
+          <a href="https://www.instagram.com/tongplus.shop/" target="_blank" class="btn-ig">IG</a>
+          <a href="https://www.facebook.com" target="_blank" class="btn-fb">Facebook</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="packages" class="section">
+      <h2 class="section-title">แพ็กเกจเติมเกม</h2>
+
+      <div class="game-card">
+        <div class="game-header">
+          <span class="game-icon">🧱</span>
+          <span class="game-name">Roblox (โรบัค)</span>
+        </div>
+        <div class="pack-list">
+          <div class="pack-item">
+            <div>
+              <div class="pack-title">80 Robux</div>
+              <div class="pack-price">฿35</div>
+            </div>
+            <a href="https://line.me/R/ti/p/~tong1111111111" target="_blank" class="buy-btn">ทักสั่งซื้อ</a>
+          </div>
+          <div class="pack-item">
+            <div>
+              <div class="pack-title">400 Robux</div>
+              <div class="pack-price">฿165</div>
+            </div>
+            <a href="https://line.me/R/ti/p/~tong1111111111" target="_blank" class="buy-btn">ทักสั่งซื้อ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-card">
+        <div class="game-header">
+          <span class="game-icon">🔥</span>
+          <span class="game-name">Free Fire (เพชร)</span>
+        </div>
+        <div class="pack-list">
+          <div class="pack-item">
+            <div>
+              <div class="pack-title">140 เพชร</div>
+              <div class="pack-price">฿35</div>
+            </div>
+            <a href="https://line.me/R/ti/p/~tong1111111111" target="_blank" class="buy-btn">ทักสั่งซื้อ</a>
+          </div>
+          <div class="pack-item">
+            <div>
+              <div class="pack-title">290 เพชร</div>
+              <div class="pack-price">฿70</div>
+            </div>
+            <a href="https://line.me/R/ti/p/~tong1111111111" target="_blank" class="buy-btn">ทักสั่งซื้อ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-card">
+        <div class="game-header">
+          <span class="game-icon">🎮</span>
+          <span class="game-name">แพ็กเสริม / เกมอื่นๆ</span>
+        </div>
+        <div class="pack-list">
+          <div class="pack-item">
+            <div>
+              <div class="pack-title">แพ็กเริ่มต้น</div>
+              <div class="pack-price">สอบถามราคา</div>
+            </div>
+            <a href="https://line.me/R/ti/p/~tong1111111111" target="_blank" class="buy-btn">ทักสั่งซื้อ</a>
+          </div>
+          <div class="pack-item">
+            <div>
+              <div class="pack-title">แพ็กสุดคุ้ม</div>
+              <div class="pack-price">สอบถามราคา</div>
+            </div>
+            <a href="https://line.me/R/ti/p/~tong1111111111" target="_blank" class="buy-btn">ทักสั่งซื้อ</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
